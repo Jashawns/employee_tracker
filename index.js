@@ -157,3 +157,97 @@ function averageSalary() {
     startTracker();
   });
 }
+
+// Add employee
+function addEmployee() {
+	console.log(
+		chalk.yellow(`
+	
+---------------------------------------------------------------------------------------                                                
+	 ________                          __                                              
+	/        |                        /  |                                             
+	$$$$$$$$/  _____  ____    ______  $$ |  ______   __    __   ______    ______       
+	$$ |__    /     \/    \  /      \ $$ | /      \ /  |  /  | /      \  /      \      
+	$$    |   $$$$$$ $$$$  |/$$$$$$  |$$ |/$$$$$$  |$$ |  $$ |/$$$$$$  |/$$$$$$  |     
+	$$$$$/    $$ | $$ | $$ |$$ |  $$ |$$ |$$ |  $$ |$$ |  $$ |$$    $$ |$$    $$ |     
+	$$ |_____ $$ | $$ | $$ |$$ |__$$ |$$ |$$ \__$$ |$$ \__$$ |$$$$$$$$/ $$$$$$$$/      
+	$$       |$$ | $$ | $$ |$$    $$/ $$ |$$    $$/ $$    $$ |$$       |$$       |     
+	$$$$$$$$/ $$/  $$/  $$/ $$$$$$$/  $$/  $$$$$$/   $$$$$$$ | $$$$$$$/  $$$$$$$/      
+							$$ |                    /  \__$$ |                         
+							$$ |                    $$    $$/                          
+							$$/                      $$$$$$/                           
+	 __       __                                                                       
+	/  \     /  |                                                                      
+	$$  \   /$$ |  ______   _______    ______    ______    ______    ______            
+	$$$  \ /$$$ | /      \ /       \  /      \  /      \  /      \  /      \           
+	$$$$  /$$$$ | $$$$$$  |$$$$$$$  | $$$$$$  |/$$$$$$  |/$$$$$$  |/$$$$$$  |          
+	$$ $$ $$/$$ | /    $$ |$$ |  $$ | /    $$ |$$ |  $$ |$$    $$ |$$ |  $$/           
+	$$ |$$$/ $$ |/$$$$$$$ |$$ |  $$ |/$$$$$$$ |$$ \__$$ |$$$$$$$$/ $$ |                
+	$$ | $/  $$ |$$    $$ |$$ |  $$ |$$    $$ |$$    $$ |$$       |$$ |                
+	$$/      $$/  $$$$$$$/ $$/   $$/  $$$$$$$/  $$$$$$$ | $$$$$$$/ $$/                 
+											   /  \__$$ |                              
+											   $$    $$/                               
+												$$$$$$/                                                                    
+-----------------------------------------------------------------------------------------
+																						  
+	`)
+	);
+	inquirer
+	  .prompt([
+		{
+		  type: "response",
+		  name: "first_name",
+		  message: "What is the employee's first name?"
+		},
+		{
+		  type: "response",
+		  name: "last_name",
+		  message: "What is the employee's last name?"
+		},
+		{
+		  type: "list",
+		  name: "role_id",
+		  message: "What is the employee's role?",
+		  choices: [
+			"1",
+			"10",
+			"7",
+			"2",
+			"3",
+			"End"]
+		},
+		{
+			type: "list",
+			name: "manager_id",
+			message: "What is the employee's role?",
+			choices: [
+			  "1",
+			  "2",
+			  "null",
+			  "End"]
+		  },
+	  ])
+	  .then(function (answer) {
+		console.log(answer.first_name);
+		console.log(answer.last_name);
+		console.log(answer.role_id);
+		console.log(answer.manager_id);
+  
+		var query = `INSERT INTO employee SET ?`
+		connection.query(query,
+		  {
+			first_name: answer.first_name,
+			last_name: answer.last_name,
+			role_id: answer.role_id,
+			manager_id: answer.manager_id,
+		  },
+		  function (err, res) {
+			if (err) throw err;
+  
+			console.table(res);
+			console.log("Completed");
+  
+			startTracker();
+		  });
+	  });
+  }
