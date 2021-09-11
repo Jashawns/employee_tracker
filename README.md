@@ -16,7 +16,15 @@ This app uses a **C**ontent **M**anagement **S**ystems interface to view and int
 
 ## Visuals 
 
-![demo](./Assets/images/weather_dashboard_demo.png) 
+![demo](./Assets/Demo/prompt.png) 
+![demo](./Assets/Demo/viewall.png) 
+![demo](./Assets/Demo/averagesalary.png) 
+![demo](./Assets/Demo/addemployee1.png) 
+![demo](./Assets/Demo/addemployee2.png) 
+![demo](./Assets/Demo/addemployeeresult.png) 
+![demo](./Assets/Demo/deleteemployee.png) 
+![demo](./Assets/Demo/delete2.png) 
+![demo](./Assets/Demo/deleteresults.png)  
 
 Screencastify Walkthrough:
 
