@@ -20,7 +20,7 @@ This app uses a **C**ontent **M**anagement **S**ystems interface to view and int
 
 Screencastify Walkthrough:
 
-[Screencastify Walkthrough](https://drive.google.com/file/d/1xAD38QYFnRRBFLinKhCCtObfG9bLRZbd/view)
+[Screencastify Walkthrough](https://drive.google.com/file/d/13Lyr5S5PGWe3OqKt5fC8d6oNF7KUu67T/view)
 
 ## Installation 
 
@@ -52,3 +52,5 @@ WHEN I am finished
 THEN I select end
 
 ## Links
+
+https://github.com/Jashawns/employee_tracker
