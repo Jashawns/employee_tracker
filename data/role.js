@@ -1,4 +1,4 @@
-class Roles {
+class Role {
 	data(title, salary, department_id) {
 		this.title = title;
 		this.salary = salary;
@@ -6,4 +6,4 @@ class Roles {
 	}
 }
 
-module.exports = Roles;
+module.exports = Role;
